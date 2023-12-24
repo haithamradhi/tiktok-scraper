@@ -29,7 +29,7 @@ async function GetPostsData(sec_id) {
     catch(err){
         console.log(err?.statusCode, err?.message, err?.json)
     } finally {
-        return data
+        return JSON.stringify(data, null, 2)
     }
 }
 
