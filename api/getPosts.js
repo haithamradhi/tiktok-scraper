@@ -29,14 +29,14 @@ async function GetPostsData(sec_id) {
     catch(err){
         console.log(err?.statusCode, err?.message, err?.json)
     } finally {
-        return JSON.stringify(data, null, 2)
+        return data[0]
     }
 }
 
 
 const apiGetPostsData = async (req, res) => {
     const result = await GetPostsData(req.query.sec_id)
-    res.send(result)
+    res.json(result)
 }
 
 module.exports={apiGetPostsData}
