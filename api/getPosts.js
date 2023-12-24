@@ -7,7 +7,7 @@ api.set({
 });
 
 async function GetPostsData(sec_id) { 
-    let data = {}
+    let data = []
     try{
         let response = await api.public.posts({
             secUid: sec_id,
